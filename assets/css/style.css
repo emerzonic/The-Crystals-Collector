@@ -1,0 +1,75 @@
+html{
+    height: 100%;
+}
+
+body{
+    text-align: center;
+    font-size: 100%;
+    background: #076585;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #01171d, #fff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #01171d, #fff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+
+}
+
+.container{
+    margin-top: 30px;
+    
+}
+
+.heading{
+    background: rgb(2, 68, 109);
+    border-radius: 25px;
+    color: #ffffff;
+}
+
+h1{
+    font-size: 350%;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.6rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.rules{
+    border-radius: 25px;
+    background: rgb(145, 208, 248);
+    margin-top: 5px;
+
+}
+
+p{
+    padding:0px 5px 5px 3px;
+    letter-spacing: 0.2rem;
+}
+
+.middle{
+    background: #91cae0;
+    border-radius: 25px;
+    margin:5px;
+}
+#crystalsBox{
+    margin-top:20;
+    /* border: 3px solid black; */
+    border-radius: 25px;
+    background: #ffffff;
+}
+
+span{
+    font-size: 40px;
+}
+
+.img-thumbnail{
+    border:none;
+}
+
+
+.win{
+    background: rgb(146, 241, 2);
+}
+
+.loss{
+    background: firebrick;
+}
+
