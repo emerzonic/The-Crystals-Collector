@@ -20,13 +20,9 @@ function generateNumbers (){
     crystalTotal =  Math.floor(Math.random() * (120 - 19 + 1)) + 19; 
     $("#currentTotal").text(crystalTotal);
     crystal1 = Math.floor(Math.random() * 12) + 1;
-        // console.log(crystal1); 
     crystal2 = Math.floor(Math.random() * 12) + 1;
-        // console.log(crystal2); 
     crystal3 = Math.floor(Math.random() * 12) + 1;
-        // console.log(crystal3); 
     crystal4 = Math.floor(Math.random() * 12) + 1;
-        // console.log(crystal4);
     playerTotal = 0;
     $("#playerTotal").text(playerTotal);    
 }
@@ -62,7 +58,6 @@ function gameOn(){
         });   
     }
 
-
 function reset (){
     $(".lost").text("Losses");
     $(".win").text("Wins");
@@ -73,7 +68,7 @@ function UpdateAndCheck(){
     if(playerTotal === crystalTotal){
         wins+= 1;
         $("#wins").text(wins);
-        $(".win").text("You Won").slideDown('slow');
+        $(".win").text("You Won")
         $(".heading").css("background-color", "green");
         generateNumbers ();
     }else if(playerTotal > crystalTotal ){
