@@ -1,12 +1,14 @@
+"use strict";
+
 var crystalTotal;
 var wins = 0;
 var losses = 0;
-var playerCurrentTotal = 0;
+var playerTotal = 0;
 var crystal1 = 0; 
 var crystal2 = 0; 
 var crystal3 = 0; 
 var crystal4 = 0;
- 
+    
 init();
 
 function init(){
@@ -25,44 +27,59 @@ function generateNumbers (){
         // console.log(crystal3); 
     crystal4 = Math.floor(Math.random() * 12) + 1;
         // console.log(crystal4);
-    playerCurrentTotal = 0;
-    $("#playerCurrentTotal").text(playerCurrentTotal);    
+    playerTotal = 0;
+    $("#playerTotal").text(playerTotal);    
 }
 
 function gameOn(){
-        $(".heading").css("background-color", "rgb(2, 68, 109);");
         $("#crystal1").click(function () {
-            playerCurrentTotal += crystal1;
-            $("#playerCurrentTotal").text(playerCurrentTotal);
+            reset ();
+            $(this).slideUp(200).slideDown(200);
+            playerTotal += crystal1;
+            $("#playerTotal").text(playerTotal);
           UpdateAndCheck();  
         });
         $("#crystal2").click(function () {
-            playerCurrentTotal += crystal2;
-            $("#playerCurrentTotal").text(playerCurrentTotal);
+            reset ();
+            $(this).slideUp(200).slideDown(200);
+            playerTotal += crystal2;
+            $("#playerTotal").text(playerTotal);
           UpdateAndCheck();  
         });
         $("#crystal3").click(function () {
-            playerCurrentTotal += crystal3;
-            $("#playerCurrentTotal").text(playerCurrentTotal);
+            reset ();
+            $(this).slideUp(200).slideDown(200);
+            playerTotal += crystal3;
+            $("#playerTotal").text(playerTotal);
           UpdateAndCheck();  
         });
         $("#crystal4").click(function () {
-            playerCurrentTotal += crystal4;
-            $("#playerCurrentTotal").text(playerCurrentTotal);
+            reset ();
+            $(this).slideUp(200).slideDown(200);
+            playerTotal += crystal4;
+            $("#playerTotal").text(playerTotal);
           UpdateAndCheck();  
         });   
     }
 
 
+function reset (){
+    $(".lost").text("Losses");
+    $(".win").text("Wins");
+    $(".heading").css("background-color", "rgb(2, 68, 109)");
+} 
+
 function UpdateAndCheck(){
-    if(playerCurrentTotal === crystalTotal){
+    if(playerTotal === crystalTotal){
         wins+= 1;
         $("#wins").text(wins);
+        $(".win").text("You Won").slideDown('slow');
         $(".heading").css("background-color", "green");
         generateNumbers ();
-    }else if(playerCurrentTotal > crystalTotal ){
+    }else if(playerTotal > crystalTotal ){
         losses+= 1;
         $("#losses").text(losses);
+        $(".lost").text("You Lost")
         $(".heading").css("background-color", "red");
         generateNumbers ();
     }

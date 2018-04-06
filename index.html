@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crystal Collector</title>
+    <title>Crystals Collector</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Fredericka+the+Great" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -14,21 +15,16 @@
         <div class="row">
             <div class="col-12">
                 <div class="heading">
-                    <h1>The Crystal Collector!</h1>
+                    <h1>The Crystals Collector!</h1>
                 </div>
             </div>
             <div class="col-12">
                 <div class="rules">
                     <h2>Rules</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing 
-                        elit, sed do eiusmod tempor incididunt ut labore 
-                        et dolore magna aliqua. Ut enim ad minim veniam, 
-                        quis nostrud exercitation ullamco laboris nisi 
-                        ut aliquip ex ea commodo consequat. Duis aute 
-                        irure dolor in reprehenderit in voluptate velit 
-                        esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, 
-                        sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <p> 
+                    Each crystal has a hidden value. Click the crystal to review the values they are holding.
+                    Now match your total crystal value to the game total to win. Be careful, you lose when you exceed
+                    the total. 
                     </p>
                 </div>
             </div>
@@ -37,19 +33,19 @@
                     <div class="row">
                         <div class="col-4">
                             <div  class="middle">
-                                <h3>Losses</h3>
+                                <h3 class="lost">Losses</h3>
                                 <span id="losses">0</span>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="middle">
-                                <h2 >Current Crystal Total</h2>
+                                <h2 > Game Total</h2>
                                 <span id="currentTotal">0</span>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="middle">
-                                <h3>Wins</h3>
+                                <h3 class="win">Wins</h3>
                                 <span id="wins">0</span>
                             </div>
                         </div>
@@ -57,8 +53,8 @@
                 </div>
                     <div class="col-12">
                         <div class="middle">
-                            <h2>Your Current Total</h2>
-                            <span id="playerCurrentTotal">0</span>
+                            <h2>Your Total</h2>
+                            <span id="playerTotal">0</span>
                         </div>
                     </div>
                     <div class="col-12" id="crystalsBox">
@@ -76,3 +72,6 @@
    <script src="assets/javascript/game.js"></script>
 </body>
 </html>
+
+
+

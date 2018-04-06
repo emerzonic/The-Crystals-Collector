@@ -5,16 +5,13 @@ html{
 body{
     text-align: center;
     font-size: 100%;
-    background: #076585;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #01171d, #fff);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #01171d, #fff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-
+    background: #00090c;  
+    background: -webkit-linear-gradient(to bottom, #01171d, #fff);  
+    background: linear-gradient(to bottom, #01171d, #fff); 
 }
 
 .container{
-    margin-top: 30px;
-    
+    margin-top: 30px;  
 }
 
 .heading{
@@ -27,16 +24,18 @@ h1{
     font-size: 350%;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 0.6rem;
+    letter-spacing: 0.4rem;
     padding-top: 20px;
     padding-bottom: 20px;
+    font-family: 'Fredericka the Great', cursive;
 }
 
 .rules{
     border-radius: 25px;
     background: rgb(145, 208, 248);
     margin-top: 5px;
-
+    padding: 0 30px;
+    font-weight: bold;
 }
 
 p{
@@ -57,15 +56,16 @@ p{
 }
 
 span{
-    font-size: 40px;
+    font-size:2em;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
 }
 
 .img-thumbnail{
     border:none;
 }
 
-
-.win{
+.won{
     background: rgb(146, 241, 2);
 }
 
