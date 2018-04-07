@@ -1,13 +1,11 @@
-"use strict";
-
-var crystalTotal;
 var wins = 0;
 var losses = 0;
-var playerTotal = 0;
+var playerTotal;
 var crystal1 = 0; 
 var crystal2 = 0; 
 var crystal3 = 0; 
 var crystal4 = 0;
+var crystalTotal;
     
 init();
 
@@ -16,6 +14,7 @@ function init(){
     gameOn();
 }
 
+//generate random numbers for game total and each crystal
 function generateNumbers (){
     crystalTotal =  Math.floor(Math.random() * (120 - 19 + 1)) + 19; 
     $("#currentTotal").text(crystalTotal);
@@ -27,6 +26,7 @@ function generateNumbers (){
     $("#playerTotal").text(playerTotal);    
 }
 
+//game function. Adds up the player total 
 function gameOn(){
         $("#crystal1").click(function () {
             reset ();
@@ -57,13 +57,14 @@ function gameOn(){
           UpdateAndCheck();  
         });   
     }
-
+//resets the heading color, wins and losses words 
 function reset (){
     $(".lost").text("Losses");
     $(".win").text("Wins");
     $(".heading").css("background-color", "rgb(2, 68, 109)");
 } 
 
+//check the game status and updates the player.
 function UpdateAndCheck(){
     if(playerTotal === crystalTotal){
         wins+= 1;
