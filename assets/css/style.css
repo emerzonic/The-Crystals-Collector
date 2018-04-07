@@ -6,8 +6,8 @@ body{
     text-align: center;
     font-size: 100%;
     background: #00090c;  
-    background: -webkit-linear-gradient(to bottom, #01171d, #fff);  
-    background: linear-gradient(to bottom, #01171d, #fff); 
+    background: -webkit-linear-gradient(to bottom, #027291, #fff);  
+    background: linear-gradient(to bottom, #027291, #fff); 
 }
 
 .container{
@@ -34,6 +34,10 @@ h3{
     color:white;
 }
 
+h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif  
+}
+
 .rules{
     border-radius: 25px;
     background: rgb(145, 208, 248);
@@ -45,6 +49,7 @@ h3{
 p{
     padding:0px 5px 5px 3px;
     letter-spacing: 0.1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .middle{
