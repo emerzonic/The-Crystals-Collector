@@ -1,142 +1,70 @@
+function Crystal(crystalValue) {
+    this.crystalValue = function () {
+        return Math.floor(Math.random() * 12) + 1;
+    };
+}
+
+var crystal1 = new Crystal();
+var crystal2 = new Crystal();
+var crystal3 = new Crystal();
+var crystal4 = new Crystal();
+
 var wins = 0;
 var losses = 0;
 var playerTotal;
-var crystal1 = 0; 
-var crystal2 = 0; 
-var crystal3 = 0; 
-var crystal4 = 0;
 var crystalTotal;
-    
+
 init();
 
-function init(){
-    generateNumbers ();
+function init() {
+    generateNumbers();
     gameOn();
 }
 
-//generate random numbers for game total and each crystal
-function generateNumbers (){
-    crystalTotal =  Math.floor(Math.random() * (120 - 19 + 1)) + 19; 
+//generate random numbers for game total and each crystal and assign to a value attribute
+function generateNumbers() {
+    crystalTotal = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
     $("#currentTotal").text(crystalTotal);
-    crystal1 = Math.floor(Math.random() * 12) + 1;
-    crystal2 = Math.floor(Math.random() * 12) + 1;
-    crystal3 = Math.floor(Math.random() * 12) + 1;
-    crystal4 = Math.floor(Math.random() * 12) + 1;
+    $('#crystal1').attr('value', (crystal1.crystalValue()));
+    $('#crystal2').attr('value', (crystal2.crystalValue()));
+    $('#crystal3').attr('value', (crystal3.crystalValue()));
+    $('#crystal4').attr('value', (crystal4.crystalValue()));
     playerTotal = 0;
-    $("#playerTotal").text(playerTotal);    
+    $("#playerTotal").text(playerTotal);
 }
 
-//game function. Adds up the player total 
-function gameOn(){
-        $("#crystal1").click(function () {
-            reset ();
-            $(this).slideUp(200).slideDown(200);
-            playerTotal += crystal1;
-            $("#playerTotal").text(playerTotal);
-          UpdateAndCheck();  
-        });
-        $("#crystal2").click(function () {
-            reset ();
-            $(this).slideUp(200).slideDown(200);
-            playerTotal += crystal2;
-            $("#playerTotal").text(playerTotal);
-          UpdateAndCheck();  
-        });
-        $("#crystal3").click(function () {
-            reset ();
-            $(this).slideUp(200).slideDown(200);
-            playerTotal += crystal3;
-            $("#playerTotal").text(playerTotal);
-          UpdateAndCheck();  
-        });
-        $("#crystal4").click(function () {
-            reset ();
-            $(this).slideUp(200).slideDown(200);
-            playerTotal += crystal4;
-            $("#playerTotal").text(playerTotal);
-          UpdateAndCheck();  
-        });   
-    }
+// game function. Adds up the player total 
+function gameOn() {
+    $('.img-thumbnail').on('click', function () {
+        var ranValue = Number($(this).attr('value'));
+        reset();
+        $(this).slideUp(200).slideDown(200);
+        playerTotal += ranValue;
+        $("#playerTotal").text(playerTotal);
+        UpdateAndCheck();
+    });
+}
+
 //resets the heading color, wins and losses words 
-function reset (){
+function reset() {
     $(".lost").text("Losses");
     $(".win").text("Wins");
     $(".heading").css("background-color", "rgb(2, 68, 109)");
-} 
-
-//check the game status and updates the player.
-function UpdateAndCheck(){
-    if(playerTotal === crystalTotal){
-        wins+= 1;
-        $("#wins").text(wins);
-        $(".win").text("You Won")
-        $(".heading").css("background-color", "green");
-        generateNumbers ();
-    }else if(playerTotal > crystalTotal ){
-        losses+= 1;
-        $("#losses").text(losses);
-        $(".lost").text("You Lost")
-        $(".heading").css("background-color", "red");
-        generateNumbers ();
-    }
 }
 
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//check the game status and updates the player.
+function UpdateAndCheck() {
+    if (playerTotal === crystalTotal) {
+        wins += 1;
+        $("#wins").text(wins);
+        $(".win").text("You Won");
+        $(".heading").css("background-color", "green");
+        generateNumbers();
+    } else if (playerTotal > crystalTotal) {
+        losses += 1;
+        $("#losses").text(losses);
+        $(".lost").text("You Lost");
+        $(".heading").css("background-color", "red");
+        generateNumbers();
+    }
+}
